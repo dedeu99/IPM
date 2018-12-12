@@ -47,40 +47,79 @@
 					</div>
 
 					<br>
-					<table class="table table-striped table-bordered table-hover">
-						<thead class="thead-light">
-							<tr>
-								<th scope="col">#</th>
-								<th scope="col">First</th>
-								<th scope="col">Last</th>
-								<th scope="col">Handle</th>
-							</tr>
-						</thead>
-						<tbody>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Mark</td>
-						      <td>Otto</td>
-						      <td>@mdo</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">2</th>
-						      <td>Jacob</td>
-						      <td>Thornton</td>
-						      <td>@fat</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Larry</td>
-						      <td>the Bird</td>
-						      <td>@twitter</td>
-						    </tr>
-						</tbody>
-					</table>
+					<div style="height:100%;overflow-y:scroll;overflow: auto;white-space: nowrap;">
+						<table  class="table table-striped table-bordered table-hover">
+							<thead class="thead-light align-items-center">
+								<tr>
+									<th style="width: 10%">#</th>
+									<th style="width: 10%">First</th>
+									<th style="width: 80%">Last</th>
+								</tr>
+								</tr>
+							</thead>
+							<tbody>
+							    <tr id="row1" onclick="atividadesGridClicked('row1')">
+							      <td>1</tD>
+							      <td>Mark</td>
+							      <td>Otto</td>
+							    </tr>
+							    <tr id="row2" onclick="atividadesGridClicked('row2')">
+							      <tD>2</td>
+							      <td>Jacob</td>
+							      <td>Thorntonaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Larry</td>
+							      <td>the Bird</td>
+							    </tr>
+							</tbody>
+						</table>
+					</div>
 					<div class="row justify-content-around">
 						<button type="button" class="btn">&lt; Retroceder</button>
 						<a href="associarPapeisAtividades_atividades.html">
-							<button type="button" class="btn btn-primary">
+							<button type="button" id="next" onclick="nextPage()" class="btn btn-primary">
 								Avançar &gt; 
 							</button>
 						</a>
@@ -175,4 +214,43 @@
     </div>
   </div>
 </div>
+
+<script>
+	var numPapeis=0;
+	var papeis=[];
+	document.getElementById("next").disabled = true;;
+	Storage.prototype.setObj = function(key, obj) {
+	    return this.setItem(key, JSON.stringify(obj))
+	}
+	Storage.prototype.getObj = function(key) {
+	    return JSON.parse(this.getItem(key))
+	}
+
+	function atividadesGridClicked(id){
+		//alert("a entrar");
+		var elem=document.getElementById(id);
+			if(elem.hasAttribute("class","bg-primary"))
+			{
+				elem.removeAttribute("class","bg-primary");
+				--numPapeis;
+				index=papeis.indexOf(elem.getElementsByTagName("td")[2].textContent);
+				papeis[index]=null;
+			}else{
+				elem.setAttribute("class", "bg-primary");
+				papeis[numPapeis++]=elem.getElementsByTagName("td")[2].textContent;
+			}
+
+			if(numPapeis>0)
+				document.getElementById("next").disabled = false;
+			else
+				document.getElementById("next").disabled = true;
+	}
+
+
+	function nextPage(){
+		localStorage.setObj('papeis', papeis);
+		//alert(papeis.join("\n"));
+	}
+	
+</script>
 </html>
