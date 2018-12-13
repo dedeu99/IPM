@@ -16,16 +16,16 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Associações</a></li>
-						<li class="breadcrumb-item"><a href="#">Associar Papéis</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Atividades</li>
+						<li class="breadcrumb-item"><a href="#">Associar Atividades</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Padrões</li>
 					</ol>
 				</nav>
 			</div>
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xs-12 ">
 					<nav class="nav nav-tabs nav-fill">
-						<p class="nav-item nav-link">Passo 1 - Seleccionar Papel</p>
-						<p class="nav-item nav-link active">Passo 2 - Seleccionar actividade</p>
+						<p class="nav-item nav-link">Passo 1 - Seleccionar Atividades</p>
+						<p class="nav-item nav-link active">Passo 2 - Seleccionar Padrões</p>
 					</nav>
 				</div>
 			</div>
@@ -112,7 +112,7 @@
 
 					<br>
 					<div class="row justify-content-around mt-3">
-						<a href="associarPapeisAtividades_papeis.html">
+						<a href="associarAtividadesPadroes_atividades.html">
 							<button type="button" class="btn" >
 								&lt; Retroceder
 							</button>
@@ -224,15 +224,15 @@
       	<div class="container align-items-center">
       		<div class="row text-center">
       			<div class="col-sm-6 w-50">
-      				<h3 >Pretende associar o(s) papel(s)</h3>
+      				<h3 >Pretende associar a(s) Actividade(s)</h3>
       			</div>
       			<div class="col-sm-6 w-50">
-      				<h3 >À(s) Atividade(s)</h3>
+      				<h3 >Ao(s) Padrão(s)</h3>
       			</div>
       		</div>
       		<div class="row text-center">
       			<div class="col-sm-6 w-50">
-      				<p id="papeisPlaceholder"></p>
+      				<p id="padroesPlaceholder"></p>
       			</div>
       			<div class="col-sm-6 w-50">
       				<p id="atividadesPlaceholder"></p>
@@ -309,12 +309,12 @@
 
 
 	function nextPage(){
-		localStorage.setObj('atividades', atividades);
+		localStorage.setObj('padroes', atividades);
 		//alert(atividades.join("\n"));
 	}
 			
-	function getPapeis(){
-			return localStorage.getObj('papeis');
+	function getPadroes(){
+			return localStorage.getObj('padroes');
 	}
 	function getAtividades(){
 		return localStorage.getObj('atividades');
@@ -322,7 +322,7 @@
 
 	$('#ModalConfirmação').on('show.bs.modal', function (e) {
 
-		document.getElementById("papeisPlaceholder").innerHTML=getPapeis();
+		document.getElementById("padroesPlaceholder").innerHTML=getPadroes();
 		//console.log(getAtividades());
 		document.getElementById("atividadesPlaceholder").innerHTML=getAtividades();
 

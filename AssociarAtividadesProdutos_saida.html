@@ -16,16 +16,17 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Associações</a></li>
-						<li class="breadcrumb-item"><a href="#">Associar Papéis</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Atividades</li>
+						<li class="breadcrumb-item"><a href="#">Associar Atividades</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Produtos</li>
 					</ol>
 				</nav>
 			</div>
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xs-12 ">
 					<nav class="nav nav-tabs nav-fill">
-						<p class="nav-item nav-link">Passo 1 - Seleccionar Papel</p>
-						<p class="nav-item nav-link active">Passo 2 - Seleccionar actividade</p>
+						<p class="nav-item nav-link">Passo 1 - Seleccionar Atividade</p>
+						<p class="nav-item nav-link ">Passo 2 - Seleccionar Produtos de Entrada</p>
+						<p class="nav-item nav-link active">Passo 3 - Seleccionar Produtos de Saída</p>
 					</nav>
 				</div>
 			</div>
@@ -112,7 +113,7 @@
 
 					<br>
 					<div class="row justify-content-around mt-3">
-						<a href="associarPapeisAtividades_papeis.html">
+						<a href="AssociarAtividadesProdutos_entrada.html">
 							<button type="button" class="btn" >
 								&lt; Retroceder
 							</button>
@@ -223,19 +224,25 @@
       <div class="modal-body">
       	<div class="container align-items-center">
       		<div class="row text-center">
-      			<div class="col-sm-6 w-50">
-      				<h3 >Pretende associar o(s) papel(s)</h3>
+      			<div class="col-sm-4 w-50">
+      				<h3>Pretende associar a(s) atividade(s)</h3>
       			</div>
-      			<div class="col-sm-6 w-50">
-      				<h3 >À(s) Atividade(s)</h3>
+      			<div class="col-sm-4 w-50">
+      				<h3>Ao(s) produtos de entrada<a</h3>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<h3>Ao(s) produtos de saída(s)</h3>
       			</div>
       		</div>
       		<div class="row text-center">
-      			<div class="col-sm-6 w-50">
-      				<p id="papeisPlaceholder"></p>
-      			</div>
-      			<div class="col-sm-6 w-50">
+      			<div class="col-sm-4 w-50">
       				<p id="atividadesPlaceholder"></p>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<p id="entradasPlaceholder"></p>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<p id="saidasPlaceholder"></p>
       			</div>
       		</div>
       	</div>
@@ -309,12 +316,15 @@
 
 
 	function nextPage(){
-		localStorage.setObj('atividades', atividades);
+		localStorage.setObj('saidas', atividades);
 		//alert(atividades.join("\n"));
 	}
 			
-	function getPapeis(){
-			return localStorage.getObj('papeis');
+	function getEntradas(){
+			return localStorage.getObj('entradas');
+	}
+	function getSaidas(){
+			return localStorage.getObj('saidas');
 	}
 	function getAtividades(){
 		return localStorage.getObj('atividades');
@@ -322,7 +332,8 @@
 
 	$('#ModalConfirmação').on('show.bs.modal', function (e) {
 
-		document.getElementById("papeisPlaceholder").innerHTML=getPapeis();
+		document.getElementById("entradasPlaceholder").innerHTML=getEntradas();
+		document.getElementById("saidasPlaceholder").innerHTML=getSaidas();
 		//console.log(getAtividades());
 		document.getElementById("atividadesPlaceholder").innerHTML=getAtividades();
 
