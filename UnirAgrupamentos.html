@@ -14,7 +14,7 @@
 			<div class="row align-items-left">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item"><a href="menu3.html">Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Agrupamentos</a></li>
 						<li class="breadcrumb-item"><a href="#">Unir</a></li>
 					</ol>
@@ -38,64 +38,34 @@
 					</div>
 
 					<br>
-					<div style="height:50%;overflow-y:scroll;overflow: auto;white-space: nowrap;" >
+					<div style="height:50%;overflow-y:scroll;overflow: auto;white-space: nowrap;cursor: pointer;" >
 						<table id="tableAgrupamentos" class="table table-striped table-bordered table-hover">
 							<thead class="thead-light align-items-center">
 							<tr>
-									<th style="width: 10%">Id</th>
-									<th style="width: 40%">Atividade</th>
-									<th style="width: 25%">Data Criação</th>
-									<th style="width: 25%">Autor</th>
+									<th style="width: 10%;cursor: default;">Id</th>
+									<th style="width: 40%;cursor: default;">Agrupamento</th>
+									<th style="width: 25%;cursor: default;">Data Criação</th>
+									<th style="width: 25%;cursor: default;">Autor</th>
 								</tr>
 							</thead>
 							<tbody>
 							    <tr id="row1" onclick="atividadesGridClicked(this)">
 							      <td>0</td>
-							      <td>Fazer sandwiches</td>
-							      <td>01/08/2018</td>
-							      <td>Slartibartfast</td>
+							      <td>Planeamento de trabalho</td>
+							      <td>01/01/2018</td>
+							      <td>Yoann</td>
 							    </tr>
 							    <tr id="row2" onclick="atividadesGridClicked(this)">
 							      <td>1</td>
-							      <td>Cruzeiro no espaço</td>
-							      <td>01/09/2018</td>
-							      <td>Arthur Dent</td>
+							      <td>Agendar serviços</td>
+							      <td>01/01/2018</td>
+							      <td>Claudiu</td>
 							    </tr>
 							    <tr id="row3" onclick="atividadesGridClicked(this)">
 							     <td>2</td>
-							      <td>Roubar nave</td>
-							      <td>01/10/2018</td>
-							      <td>Trillian</td>
-							    </tr>
-							    <tr id="row4" onclick="atividadesGridClicked(this)">
-							      <td>3</td>
-							      <td>Roubar golfinho</td>
-							      <td>01/11/2018</td>
-							      <td>Zaphod Beeblerox</td>
-							    </tr>
-							    <tr id="row5" onclick="atividadesGridClicked(this)">
-							      <td>4</td>
-							      <td>Profanar orcas</td>
-							      <td>01/12/2018</td>
-							      <td>Ivan Linux</td>
-							    </tr>
-							    <tr id="row6" onclick="atividadesGridClicked(this)">
-							      <td>5</td>
-							      <td>Usar gatos como atração</td>
-							      <td>02/12/2018</td>
-							      <td>Ulysses</td>
-							    </tr>
-							    <tr id="row7" onclick="atividadesGridClicked(this)">
-							     <td>6</td>
-							      <td>Falsificar Identidades</td>
-							      <td>02/12/2018</td>
-							      <td>Big brother</td>
-							    </tr>
-							    <tr id="row8" onclick="atividadesGridClicked(this)">
-							      <td>7</td>
-							      <td>Manipular passageiros</td>
-							      <td>02/12/2018</td>
-							      <td>Marcelo Rebelo</td>
+							      <td>Novas metodologias</td>
+							      <td>01/09/2018</td>
+							      <td>CEO</td>
 							    </tr>
 							</tbody>
 						</table>
@@ -266,7 +236,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h5 class="modal-title w-100" id="exampleModalLabel">Confirmar Associação</h5>
+        <h5 class="modal-title w-100" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -280,7 +250,7 @@
       </div>
       <div class="modal-footer justify-content-around">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Menu principal</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Nova associação</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Nova União</button>
       </div>
     </div>
     </div>

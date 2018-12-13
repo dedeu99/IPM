@@ -10,7 +10,7 @@
 			<div class="row justify-content-center align-items-center" style="margin-top: 100px">
 
 				<div class="col-sm-4">
-					<form action="menu.html" method="POST" >
+					<form  >
 						<div class="form-group text-center">
 							<h1>Login</h1>
 						</div>
@@ -24,7 +24,7 @@
 							<input type="password" id="passwordfield" name="password" class="form-control" >
 						</div>
 						<div class="form-group text-center">
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="button" class="btn btn-primary" onclick="validateUser()">Login</button>
 
 							<small class="form-text">
 								Remember me:<input type="checkbox" name="autologin" value="1">
@@ -46,6 +46,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+	 
+<script>
+    	function validateUser(){
+    		if(document.getElementById("emailfield").value==="analista@ualg.pt")
+    			window.location.href = "menu.html";
+    		else
+    			if(document.getElementById("emailfield").value==="gestor@ualg.pt")
+    			window.location.href = "menu.html";
+    		else
+    			if(document.getElementById("emailfield").value==="func@ualg.pt")
+    			window.location.href = "menu.html";
+		}
+		
+		</script>
 	</body>
 </html>
