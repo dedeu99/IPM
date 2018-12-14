@@ -11,15 +11,14 @@
 	<body>
 		<div class="container shadow"  >
 
-			<div class="row align-items-left">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="menu3.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Agrupamentos</a></li>
-						<li class="breadcrumb-item"><a href="#">Unir</a></li>
-					</ol>
-				</nav>
-			</div>
+			<nav class="navbar navbar-expand-sm justify-content-end">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="menu.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="menuAgrupamentos.html">Agrupamentos</a></li>
+                    <li class="breadcrumb-item active">Unir</li>
+                </ol>   
+                <a class="ml-auto" href="index.html"><button class="btn btn-secondary" >Logout</button></a>
+            </nav>
 			<div class="row">
 				<div class="col-xs-12 border w-100" >
 					<br>						
@@ -73,7 +72,7 @@
 
 					<br>
 					<div class="row justify-content-around mt-3">
-						<a href="associarAtividadesPadroes_atividades.html">
+						<a href="menuAgrupamentos.html">
 							<button type="button" class="btn" >
 								&lt; Retroceder
 							</button>
@@ -249,7 +248,7 @@
       	</div>
       </div>
       <div class="modal-footer justify-content-around">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Menu principal</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="menu()">Menu principal</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Nova União</button>
       </div>
     </div>
@@ -258,6 +257,9 @@
 
 
 <script>
+	function menu(){
+		window.location.href="menu.html";
+	}
 	var numAtividades=0;
 	var atividades=[];
 	var rows=[];
