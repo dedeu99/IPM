@@ -370,7 +370,7 @@
 		var cell = row.insertCell(0);
 		cell.textContent=elem.getElementsByTagName('td')[0].textContent;
 		cell=row.insertCell(1);
-		cell.innerHTML='<span >&#x1f5d1</span>';
+		cell.innerHTML='<button type="button" class="close" ><span >&#x1f5d1</span></button>';
 		cell=row.insertCell(2);
 		cell.textContent=elem.getElementsByTagName('td')[1].textContent;
 		cell=row.insertCell(3);
@@ -467,7 +467,7 @@
 		var cell = row.insertCell(0);
 		cell.innerHTML='<input type="checkbox" >';
 		cell = row.insertCell(1);
-		cell.innerHTML='<span >&#x1f5d1</span>';
+		cell.innerHTML='<button type="button" class="close" ><span >&#x1f5d1</span></button>';
 		cell = row.insertCell(2);
 		var elem=document.getElementById("sel");
 		var str=elem.options[elem.selectedIndex].textContent;
