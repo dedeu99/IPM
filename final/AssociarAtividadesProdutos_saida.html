@@ -11,23 +11,21 @@
 	<body>
 		<div class="container shadow"  >
 
-			<div class="row align-items-left">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="menu3.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Associações</a></li>
-						<li class="breadcrumb-item"><a href="#">Associar Atividades</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Produtos</li>
-					</ol>
-					</ol>
-				</nav>
-			</div>
+			<nav class="navbar navbar-expand-sm justify-content-end">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="menu.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoes.html">Associações</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoesAtividades.html">Associar Atividades</a></li>
+                    <li class="breadcrumb-item active">Produtos</li>
+                </ol>   
+                <a class="ml-auto" href="index.html"><button class="btn btn-secondary" >Logout</button></a>
+            </nav>
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xs-12 ">
 					<nav class="nav nav-tabs nav-fill">
 						<p class="nav-item nav-link">Passo 1 - Seleccionar Atividade</p>
-						<p class="nav-item nav-link active">Passo 2 - Seleccionar Produtos de Entrada</p>
-						<p class="nav-item nav-link">Passo 3 - Seleccionar Produtos de Saída</p>
+						<p class="nav-item nav-link ">Passo 2 - Seleccionar Produtos de Entrada</p>
+						<p class="nav-item nav-link active">Passo 3 - Seleccionar Produtos de Saída</p>
 					</nav>
 				</div>
 			</div>
@@ -52,7 +50,7 @@
 					<div style="height:50%;overflow-y:scroll;overflow: auto;white-space: nowrap;cursor: pointer;" >
 						<table  class="table table-striped table-bordered table-hover">
 							<thead class="thead-light align-items-center">
-								<tr>
+							<tr>
 									<th style="width: 10%;cursor: default;">Id</th>
 									<th style="width: 40%;cursor: default;">Produto</th>
 									<th style="width: 25%;cursor: default;">Data Criação</th>
@@ -62,52 +60,47 @@
 							<tbody>
 							    <tr id="row1" onclick="atividadesGridClicked('row1')">
 							      <td>0</td>
-							      <td>Matéria Prima</td>
+							      <td>Relva</td>
 							      <td>01/08/2018</td>
-							      <td>Lopetegui</td>
+							      <td>Carlos Ramos</td>
 							    </tr>
 							    <tr id="row2" onclick="atividadesGridClicked('row2')">
 							      <td>1</td>
-							      <td>Sistema GNNS</td>
+							      <td>Batatas</td>
 							      <td>01/09/2018</td>
-							      <td>João Malhão</td>
+							      <td>Reinaldo</td>
 							    </tr>
 							    <tr id="row3" onclick="atividadesGridClicked('row3')">
 							     <td>2</td>
-							      <td>Expressores</td>
+							      <td>Redução de impacto ambiental</td>
 							      <td>01/09/2018</td>
-							      <td>Carla Arla</td>
+							      <td>Teresa Subaru</td>
 							    </tr>
 							    <tr id="row4" onclick="atividadesGridClicked('row4')">
 							      <td>3</td>
-							      <td>Sistema SIG</td>
+							      <td>Abóboras</td>
 							      <td>01/09/2018</td>
 							      <td>D.Sebastião</td>
 							    </tr>
 							    <tr id="row5" onclick="atividadesGridClicked('row5')">
 							      <td>4</td>
-							      <td>Sementes de Abóbora</td>
+							      <td>Seguro do tractor</td>
 							      <td>01/09/2018</td>
 							      <td>Sara Leite</td>
 							    </tr>
-
 							</tbody>
 						</table>
 					</div>	
 
 					<br>
 					<div class="row justify-content-around mt-3">
-						<a href="AssociarAtividadesProdutos_atividades.html">
+						<a href="AssociarAtividadesProdutos_entrada.html">
 							<button type="button" class="btn" >
 								&lt; Retroceder
 							</button>
 						</a>
 						
-						<a href="AssociarAtividadesProdutos_saida.html">
-							<button type="button" id="next" onclick="nextPage()" class="btn btn-primary">
-								Avançar &gt; 
-							</button>
-						</a>
+						<button id="next" type="button" onclick="nextPage()" class="btn btn-primary" data-toggle="modal" data-target="#ModalConfirmação">Associar</button>
 					</div>
 					<br>
 				</div>
@@ -200,8 +193,81 @@
 
 
 
+<div class="modal fade" id="ModalConfirmação" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100" id="exampleModalLabel">Confirmar Associação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container align-items-center">
+      		<div class="row text-center">
+      			<div class="col-sm-4 w-50">
+      				<h3>Pretende associar a(s) atividade(s)</h3>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<h3>Ao(s) produtos de entrada<a</h3>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<h3>Ao(s) produtos de saída(s)</h3>
+      			</div>
+      		</div>
+      		<div class="row text-center">
+      			<div class="col-sm-4 w-50">
+      				<p id="atividadesPlaceholder"></p>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<p id="entradasPlaceholder"></p>
+      			</div>
+      			<div class="col-sm-4 w-50">
+      				<p id="saidasPlaceholder"></p>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+      <div class="modal-footer justify-content-around">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#ModalContinuacao">Confirmar associação</button>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalContinuacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100" id="exampleModalLabel">Confirmar Associação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+      		<div class="row text-center">
+      			<h3 class="w-100">Associação criada com sucesso</h3>
+      		</div>
+      	</div>
+      </div>
+      <div class="modal-footer justify-content-around">
+        <button type="button" class="btn btn-danger" onclick="menu()">Menu principal</button>
+        <button type="button" class="btn btn-primary" onclick="restart()">Nova associação</button>
+      </div>
+    </div>
+    </div>
+</div>
+
 
 <script>
+
+	function menu(){
+		window.location.href="menu.html";
+	}
+	function restart(){
+		window.location.href="AssociarAtividadesProdutos_atividades.html";
+	}
 	var numAtividades=0;
 	var atividades=[];
 	
@@ -216,6 +282,7 @@
 	    return JSON.parse(this.getItem(key)).join("<br>");
 	    //return ret;
 	}
+	document.getElementById("next").disabled = getEntradas().length>0?false:true;
 	function atividadesGridClicked(id){
 		//alert("a entrar");
 		var elem=document.getElementById(id);
@@ -230,15 +297,36 @@
 				atividades[numAtividades++]=elem.getElementsByTagName("td")[1].textContent;
 			}
 
+			if(numAtividades+getEntradas().length>0)
+				document.getElementById("next").disabled = false;
+			else
+				document.getElementById("next").disabled = true;
 	}
 
 
 	function nextPage(){
-		localStorage.setObj('entradas', atividades);
+		localStorage.setObj('saidas', atividades);
 		//alert(atividades.join("\n"));
 	}
 			
+	function getEntradas(){
+			return localStorage.getObj('entradas');
+	}
+	function getSaidas(){
+			return localStorage.getObj('saidas');
+	}
+	function getAtividades(){
+		return localStorage.getObj('atividades');
+	}
 
+	$('#ModalConfirmação').on('show.bs.modal', function (e) {
+
+		document.getElementById("entradasPlaceholder").innerHTML=getEntradas();
+		document.getElementById("saidasPlaceholder").innerHTML=getSaidas();
+		//console.log(getAtividades());
+		document.getElementById("atividadesPlaceholder").innerHTML=getAtividades();
+
+	});
 	
 
 
