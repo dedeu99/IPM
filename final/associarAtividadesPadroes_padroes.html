@@ -264,7 +264,7 @@
       </div>
       <div class="modal-footer justify-content-around">
         <button type="button" class="btn btn-danger" onclick="menu()">Menu principal</button>
-        <button type="button" class="btn btn-primary">Nova associação</button>
+        <button type="button" class="btn btn-primary" onclick="restart()">Nova associação</button>
       </div>
     </div>
     </div>
@@ -274,6 +274,9 @@
 <script>
 	function menu(){
 		window.location.href="menu.html";
+	}
+	function restart(){
+		window.location.href="AssociarAtividadesPãdroes_atividades.html";
 	}
 	var numAtividades=0;
 	var atividades=[];

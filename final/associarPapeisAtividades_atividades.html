@@ -11,16 +11,15 @@
 	<body>
 		<div class="container shadow"  >
 
-			<div class="row align-items-left">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="menu3.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Associações</a></li>
-						<li class="breadcrumb-item"><a href="#">Associar Papéis</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Atividades</li>
-					</ol>
-				</nav>
-			</div>
+			<nav class="navbar navbar-expand-sm justify-content-end">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="menu.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoes.html">Associações</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoesAtividades.html">Associar Atividades</a></li>
+                    <li class="breadcrumb-item active">Papeis</li>
+                </ol>   
+                <a class="ml-auto" href="index.html"><button class="btn btn-secondary" >Logout</button></a>
+            </nav>	
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xs-12 ">
 					<nav class="nav nav-tabs nav-fill">
@@ -264,8 +263,8 @@
       	</div>
       </div>
       <div class="modal-footer justify-content-around">
-        <a href="menu3.html"><button type="button" class="btn btn-danger">Menu principal</button></a>
-        <a href="associarPapeisAtividades_papeis.html"><button type="button" class="btn btn-primary">Nova associação</button></a>
+       <button type="button" class="btn btn-danger" onclick="menu()">Menu principal</button>
+       <button type="button" class="btn btn-primary" onclick="restart()">Nova associação</button>
       </div>
     </div>
     </div>
@@ -273,6 +272,13 @@
 
 
 <script>
+
+	function menu(){
+		window.location.href="menu.html";
+	}
+	function restart(){
+		window.location.href="associarPapeisAtividades_papeis.html";
+	}
 	var numAtividades=0;
 	var atividades=[];
 	document.getElementById("next").disabled = true;;
