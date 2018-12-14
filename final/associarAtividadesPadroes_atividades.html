@@ -10,22 +10,21 @@
 	</head>
 	<body>
 		<div class="container shadow"  >
+			<nav class="navbar navbar-expand-sm justify-content-end">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="menu.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoes.html">Associações</a></li>
+                    <li class="breadcrumb-item"><a href="menuAssociacoesAtividades.html">Associar Atividades</a></li>
+                    <li class="breadcrumb-item active">Padrões</li>
+                </ol>   
+                <a class="ml-auto" href="index.html"><button class="btn btn-secondary" >Logout</button></a>
+            </nav>
 
-			<div class="row align-items-left">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="menu3.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="#">Associações</a></li>
-						<li class="breadcrumb-item"><a href="#">Associar Atividades</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Padrões</li>
-					</ol>
-				</nav>
-			</div>
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xs-12 ">
 					<nav class="nav nav-tabs nav-fill">
-						<p class="nav-item nav-link">Passo 1 - Seleccionar Atividades</p>
-						<p class="nav-item nav-link active">Passo 2 - Seleccionar Padrões</p>
+						<p class="nav-item nav-link active">Passo 1 - Seleccionar Atividades</p>
+						<p class="nav-item nav-link">Passo 2 - Seleccionar Padrões</p>
 					</nav>
 				</div>
 			</div>
@@ -52,7 +51,7 @@
 							<thead class="thead-light align-items-center">
 							<tr>
 									<th style="width: 10%;cursor: default;">Id</th>
-									<th style="width: 40%;cursor: default;">Padrões</th>
+									<th style="width: 40%;cursor: default;">Atividade</th>
 									<th style="width: 25%;cursor: default;">Data Criação</th>
 									<th style="width: 25%;cursor: default;">Autor</th>
 								</tr>
@@ -60,51 +59,21 @@
 							<tbody>
 							    <tr id="row1" onclick="atividadesGridClicked('row1')">
 							      <td>0</td>
-							      <td>Coincidências suspeitas - Jan/18</td>
-							      <td>01/01/2018</td>
-							      <td>Ashley Williams</td>
+							      <td>Relatório queixas 1ºtrimestre 2018</td>
+							      <td>01/04/2018</td>
+							      <td>André</td>
 							    </tr>
 							    <tr id="row2" onclick="atividadesGridClicked('row2')">
 							      <td>1</td>
-							      <td>Coincidências suspeitas - Fev/18</td>
-							      <td>01/02/2018</td>
-							      <td>Ashley Williams</td>
+							      <td>Relatório queixas 2ºtrimestre 2018</td>
+							      <td>01/07/2018</td>
+							      <td>Claudiu</td>
 							    </tr>
 							    <tr id="row3" onclick="atividadesGridClicked('row3')">
 							     <td>2</td>
-							     <td>Coincidências suspeitas - Mar/18</td>
-							      <td>01/03/2018</td>
-							      <td>Ashley Williams</td>
-							    </tr>
-							    <tr id="row4" onclick="atividadesGridClicked('row4')">
-							      <td>3</td>
-							     <td>Coincidências suspeitas - Abr/18</td>
-							      <td>01/04/2018</td>
-							      <td>Ashley Williams</td>
-							    </tr>
-							    <tr id="row5" onclick="atividadesGridClicked('row5')">
-							      <td>4</td>
-							     <td>Coincidências suspeitas - Mai/18</td>
-							      <td>01/05/2018</td>
-							      <td>Ashley Williams</td>
-							    </tr>
-							    <tr id="row6" onclick="atividadesGridClicked('row6')">
-							      <td>5</td>
-							     <td>Coincidências suspeitas - Jun/18</td>
-							      <td>01/06/2018</td>
-							      <td>Ashley Williams</td>
-							    </tr>
-							    <tr id="row7" onclick="atividadesGridClicked('row7')">
-							     <td>6</td>
-							     <td>Coincidências suspeitas - Jul/18</td>
-							      <td>01/07/2018</td>
-							      <td>Ashley Williams</td>
-							    </tr>
-							    <tr id="row8" onclick="atividadesGridClicked('row8')">
-							      <td>7</td>
-							      <td>Coincidências suspeitas - Ago/18</td>
-							      <td>01/08/2018</td>
-							      <td>Ashley Williams</td>
+							      <td>Relatório queixas 3ºtrimestre 2018</td>
+							      <td>01/10/2018</td>
+							      <td>Yoann</td>
 							    </tr>
 							</tbody>
 						</table>
@@ -112,13 +81,17 @@
 
 					<br>
 					<div class="row justify-content-around mt-3">
-						<a href="associarAtividadesPadroes_atividades.html">
+						<a href="menuAssociacoesAtividades.html">
 							<button type="button" class="btn" >
 								&lt; Retroceder
 							</button>
 						</a>
 						
-						<button id="next" type="button" onclick="nextPage()" class="btn btn-primary" data-toggle="modal" data-target="#ModalConfirmação">Associar</button>
+						<a href="associarAtividadesPadroes_padroes.html">
+							<button type="button" id="next" onclick="nextPage()" class="btn btn-primary">
+								Avançar &gt; 
+							</button>
+						</a>
 					</div>
 					<br>
 				</div>
@@ -201,77 +174,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="modal fade" id="ModalConfirmação" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title w-100" id="exampleModalLabel">Confirmar Associação</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      	<div class="container align-items-center">
-      		<div class="row text-center">
-      			<div class="col-sm-6 w-50">
-      				<h3 >Pretende associar a(s) Actividade(s)</h3>
-      			</div>
-      			<div class="col-sm-6 w-50">
-      				<h3 >Ao(s) Padrão(s)</h3>
-      			</div>
-      		</div>
-      		<div class="row text-center">
-      			<div class="col-sm-6 w-50">
-      				<p id="atividadesPlaceholder"></p>
-      			</div>
-      			<div class="col-sm-6 w-50">
-      				<p id="padroesPlaceholder"></p>
-      			</div>
-      		</div>
-      	</div>
-      </div>
-      <div class="modal-footer justify-content-around">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#ModalContinuacao">Confirmar associação</button>
-      </div>
-    </div>
-    </div>
-</div>
-<div class="modal fade" id="ModalContinuacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title w-100" id="exampleModalLabel">Confirmar Associação</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      	<div class="container">
-      		<div class="row text-center">
-      			<h3 class="w-100">Associação criada com sucesso</h3>
-      		</div>
-      	</div>
-      </div>
-      <div class="modal-footer justify-content-around">
-        <a href="menu3.html"><button type="button" class="btn btn-danger">Menu principal</button></a>
-        <a href="associarAtividadesPadroes_atividades.html"><button type="button" class="btn btn-primary">Nova associação</button></a>
-      </div>
-    </div>
-    </div>
-</div>
-
-
 <script>
 	var numAtividades=0;
 	var atividades=[];
@@ -309,24 +211,10 @@
 
 
 	function nextPage(){
-		localStorage.setObj('padroes', atividades);
+		localStorage.setObj('atividades', atividades);
 		//alert(atividades.join("\n"));
 	}
 			
-	function getPadroes(){
-			return localStorage.getObj('padroes');
-	}
-	function getAtividades(){
-		return localStorage.getObj('atividades');
-	}
-
-	$('#ModalConfirmação').on('show.bs.modal', function (e) {
-
-		document.getElementById("padroesPlaceholder").innerHTML=getPadroes();
-		//console.log(getAtividades());
-		document.getElementById("atividadesPlaceholder").innerHTML=getAtividades();
-
-	});
 	
 
 
